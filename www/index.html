@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="assets/favicon48.ico">
+
+    <!--  Global wep-app  -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!--  IOS wep-app  -->
+    <meta name="theme-color" content="#000">
+    <link rel="apple-touch-icon" href="assets/favicon512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- если надо кастомное название для иконки
+    <meta name="apple-mobile-web-app-title" content="Pult: Пульт для ПК">!-->
+    
+    <title>Pult</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="bar head">
+            <div class="audio btn" combination="m" onclick="changeImage()"><img id="change-svg" src="assets/working-audio.svg" alt="audio blocked" draggable="false"></div>
+            <div class="device-name">Устройство не подключено</div>
+            <div class="audio btn"><img src="assets/burger-menu.svg" alt="select preset" draggable="false"></div>
+        </div>
+        <div class="bar central">
+            <div class="button space btn" combination="space">Space</div>
+            <div class="nav-audio">
+                <div class="button left btn" combination="ctrl+left"><img src="assets/arrow-button.svg" alt="pre track" draggable="false"></div>
+                <div class="audio-bar">
+                    <div class="audio-plus btn" combination="volumeup"><img src="assets/audio-plus.svg" alt="next track" draggable="false"></div>
+                    <div class="split-line"></div>
+                    <div class="audio-minus btn" combination="volumedown"><img src="assets/audio-minus.svg" alt="next track" draggable="false"></div>
+                </div>
+                <div class="button right btn" combination="ctrl+right"><img src="assets/arrow-button.svg" alt="next track" draggable="false"></div>
+            </div>
+            <div class="combinations"></div>
+        </div>
+        <div class="bar bottom">
+            <div class="touch-screen"></div>
+            <!-- <div class="screen touch btn"><img src="assets/touchscreen.svg" alt=""></div>
+            <div class="screen keyboard btn"><img src="assets/keyboard.svg" alt=""></div> -->
+        </div>
+        <div class="bar bottom">
+            <div class="select">
+                <button class="touch-screen btn"><img src="assets/touchscreen-active.svg" alt="touch-screen" draggable="false"></button>
+                <button class="keyboard btn"><img src="assets/keyboard-inactive.svg" alt="keyboard" draggable="false"></button>
+            </div>
+            <div class="buttons">
+                <btn class="btn small fullscreen"><img src="assets/fullscreen-inactive.svg" alt="fullscreen"></btn>
+                <btn class="btn small captions"><img src="assets/captions-inactive.svg" alt="captions"></btn>
+            </div>
+        </div>
+        <input id="input-keyboard" type="hidden">
+        <div class="keyboard bottom">
+            <btn class="key">Ctrl</btn>
+            <btn class="key">Shift</btn>
+            <btn class="key">Alt</btn>
+        </div>
+    </div>
+    
+    <script src="lib.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+html{
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    width: 100%;
+    height: 100svh;
+    position: fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-color: #000;
+}
+
+
+* {
+    /*font-family: "Roboto Mono", monospace;*/
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+    -webkit-tap-highlight-color: #b4b4b427;
+}
+
+*::selection {
+    background-color: #3b3b3b8e;
+    color: #FFF;
+}
+
+div.btn {
+    user-select: none;
+    cursor: pointer;
+}
+
+div.wrapper {
+    height: 100%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+div.bar {
+    width: 100%;
+    height: 100%;
+}
+
+div.bar.head {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+div.bar.head > div.audio > img {
+    height: 17px;
+}
+
+
+div.bar.head > div.device-name {
+    color: #DFDFDF;
+    font-size: 16px;
+    font-weight: 590;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 15px;
+
+    width: 220px;
+    transform: translateY(-5px);
+}
+
+div.bar.central {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+div.bar.central > div.button.space {
+    color: #fff;
+    font-weight: 590;
+    font-size: 24px;
+    background-color: #1C1C1E;
+    border-radius: 20px;
+
+    width: fit-content;
+    padding: 26px 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    transform: translateY(30px);
+}
+
+div.bar.central > div.nav-audio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.bar.central > div.nav-audio > div.button {
+    background-color: #1C1C1E;
+    padding: 60px 55px 60px 65px;
+    transform: translateX(40px);
+    border-radius: 50%;
+}
+
+div.bar.central > div.nav-audio > div.button.left {
+    rotate: 180deg;
+}
+
+div.bar.central > div.nav-audio > div.audio-bar {
+    background-color: #1C1C1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 15px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 45px);
+    border-radius: 20px;
+    gap: 10px;
+
+}
+div.bar.central > div.nav-audio > div.audio-bar > div.split-line {
+    background-color: #dfdfdf21;
+    height: 2px;
+    width: 100%;
+}
+
+div.bar.central > div.nav-audio > div.audio-bar img {
+    width: 50px;
+}
+
+
+div.bar.bottom {
+    display: flex;
+    align-items: baseline;
+    height: fit-content;
+    /* height: 80px; */
+    justify-content: space-evenly;
+    padding-bottom: 2px;
+}
+
+div.bar.bottom > .buttons{
+    display:flex;
+    gap: 15px;
+}
+div.bar.bottom > .buttons > .btn.small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C1C1E;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+}
+
+div.bar.bottom > div.screen {
+    background-color: #1C1C1E;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+div.bar.bottom > div.screen > img {
+    width: 30px;
+}
+
+div.bar.central > div.combinations {
+    display: flex;
+    max-width: 100svw;
+    overflow-x: scroll;
+    margin-top: 15px;
+    gap: 10px;
+    padding: 0 20px 5px;
+    scrollbar-width: none;
+}
+div.bar.central > div.combinations::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+div.bar.central > div.combinations > div.item {
+    background-color: #1C1C1E;
+    color: #fff;
+    white-space: nowrap;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+div.bar.bottom > div.touch-screen {
+    background-color: #070707;
+    padding-bottom: 55%;
+    width: 95%;
+    margin: 25px;
+    border: 2px solid #1C1C1E;
+    border-radius: 25px;
+    transition-duration: .1s;
+}
+.bar.bottom{
+    /*visibility: hidden;*/
+}
+
+
+.keyboard.keyboard.bottom{
+    display: flex;
+    gap:10px
+}
+
+.keyboard.bottom > .key{
+    /*visibility: hidden;*/
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+
+    background-color: #0A0A0A;
+    border: solid 2px #1C1C1E;
+    border-radius: 25px;
+
+    margin-bottom: 20px;
+    padding: 8px 25px;
+}
+.key:focus{
+    background-color: wheat;
+}
+
+.buttons.bottom{
+
+}
+.bar > .select{
+    display: flex;
+    background-color: #1C1C1E;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.bar > .select >.btn{
+    color: white;
+    font-size: 12px;
+    
+    background-color: #1C1C1E;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 0;
+}
+.bar > .select > .touch-screen{
+    background-color: #2E2E32;
+}
+
+
