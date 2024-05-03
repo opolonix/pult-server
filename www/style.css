@@ -211,6 +211,10 @@ div.bar.bottom > div.touch-screen {
     border-radius: 25px;
     transition-duration: .1s;
 }
+div.bar.bottom > div.touch-screen > img{
+    margin: 17px;
+    float: right;
+}
 .bar.bottom{
     /*visibility: hidden;*/
 }
