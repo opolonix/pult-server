@@ -2,7 +2,6 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 
 import uvicorn
-import pyautogui
 
 app = FastAPI()
 
