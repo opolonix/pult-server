@@ -5,6 +5,11 @@ import uvicorn
 
 app = FastAPI()
 
+@app.get("/generate/auth-token")
+async def keyboard(key: str) -> dict:
+    keys = key.split('+')
+    return {"ok": True}
+
 app.mount("/", StaticFiles(directory="www", html=True), name="static")
 
 if __name__ == "__main__":
