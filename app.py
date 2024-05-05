@@ -38,6 +38,9 @@ async def update_git(secret: str, pull: str = None, restart: str = None) -> str:
     
     return HTMLResponse(open('secret.html', encoding='utf-8').read())
 
+@app.get("/git")
+async def update_git(**data) -> str:
+    print(data)
 
 app.mount("/", StaticFiles(directory="www", html=True), name="static")
 
