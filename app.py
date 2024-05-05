@@ -38,7 +38,7 @@ async def update_git(secret: str, pull: str = None, restart: str = None) -> str:
     
     return HTMLResponse(open('secret.html', encoding='utf-8').read())
 
-@app.get("/git")
+@app.post("/git")
 async def github_webhook(request: Request):
     signature = request.headers.get("X-Hub-Signature")
     print(request.headers)
