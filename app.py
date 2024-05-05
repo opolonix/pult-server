@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from passlib.context import CryptContext
 
-import uvicorn, random, string, subprocess, json
+import uvicorn, random, string, subprocess, hashlib, hmac
 
 app = FastAPI()
 
@@ -39,8 +39,25 @@ async def update_git(secret: str, pull: str = None, restart: str = None) -> str:
     return HTMLResponse(open('secret.html', encoding='utf-8').read())
 
 @app.get("/git")
-async def update_git(**data) -> str:
-    print(data)
+async def github_webhook(request: Request):
+    signature = request.headers.get("X-Hub-Signature")
+    print(request.headers)
+    if signature is None:
+        raise HTTPException(status_code=403, detail="Signature header required")
+
+    body = await request.body()
+    hash_algorithm, signature_hash = signature.split("=", 1)
+
+    if hash_algorithm != "sha1":
+        raise HTTPException(status_code=501, detail="Unsupported hash algorithm")
+
+    hmac_hash = hmac.new(GIT_SECRET.encode(), body, hashlib.sha1).hexdigest()
+    if not hmac.compare_digest(signature_hash, hmac_hash):
+        raise HTTPException(status_code=403, detail="Invalid signature")
+
+    subprocess.run("git pull", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+    return True
 
 app.mount("/", StaticFiles(directory="www", html=True), name="static")
 
