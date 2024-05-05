@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="icon" href="assets/favicon48.ico">
+    <link rel="icon" href="../assets/favicon48.ico">
   </head>
   <body>
+    <style>
+      iframe {
+        display: none;
+      }
+    </style>
     <script
       async
       src="https://telegram.org/js/telegram-widget.js?22"
@@ -14,7 +19,9 @@
       data-size="small"
       data-onauth="onTelegramAuth(user)"
       data-request-access="write"
+      style="display: none;"
     ></script>
+    <button onclick="return TWidgetLogin.auth();">Войти через телеграм</button>
     <script type="text/javascript">
       function onTelegramAuth(user) { // эта функция принимает обьект пользователя после авторизации через телеграм
         fetch(`/generate/token/tg?hash=${user.hash}`);
