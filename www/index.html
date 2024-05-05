@@ -24,6 +24,13 @@
     <title>Pult</title>
 </head>
 <body>
+    <script src="core/memory.js"></script>
+    <script>
+        const mem = new Memory()
+        let token = mem.get("auth-token")
+        if (!token) window.location = "/signin" // страница авторизации если нет токена авторизации
+    </script>
+
     <div class="wrapper">
         <div class="bar head">
             <div class="audio btn" combination="m" onclick="changeImage()"><img id="change-svg" src="assets/working-audio.svg" alt="audio blocked" draggable="false"></div>
