@@ -16,7 +16,6 @@
       data-request-access="write"
       style="display: none;"
     ></script>
-    <button onclick="return TWidgetLogin.auth();">Войти через телеграм</button>
     <script type="text/javascript">
       function onTelegramAuth(user) { // эта функция принимает обьект пользователя после авторизации через телеграм
         fetch(`/generate/token/tg?hash=${user.hash}`);
